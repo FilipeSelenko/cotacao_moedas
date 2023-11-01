@@ -31,7 +31,7 @@ Substitua ```nome_do_script.py``` pelo nome do arquivo onde o código está arma
 **conexao:** Foi criado um banco de dados "desafio_pismo.db" para a ingestão dos dados extraídos da API.
 
 
-O script lerá o arquivo CSV, transformará os dados em um DataFrame do pandas e carregará esses dados na tabela do banco de dados SQLite especificada. 
+O script ```ingestao_base_coffe.py``` será responsável por ler o arquivo CSV, transformar os dados em um DataFrame do pandas e carregar esses dados na tabela do banco de dados SQLite especificada. 
 
 Ao final da execução, você terá os dados do arquivo CSV armazenados no banco de dados "desafio_pismo.db" na tabela "coffee".
 
