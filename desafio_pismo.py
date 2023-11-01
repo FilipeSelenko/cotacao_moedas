@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 api_key = 'abc232d21be4415d83620c03a8b0b05a'
 base_url = "https://openexchangerates.org/api/historical/"
 
-# Data de início e fim desejadas
+# Data de início e fim que iremos extrair
 data_inicio = datetime(2022, 7, 21)
 data_fim = datetime(2022, 8, 31)
 

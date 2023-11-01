@@ -1,7 +1,7 @@
 import sqlite3
 import pandas as pd
 
-# Conectando ao banco de dados SQLite
+# Conectando ao banco de dados SQLite que criamos
 conexao = sqlite3.connect("desafio_pismo.db")
 cursor = conexao.cursor()
 
