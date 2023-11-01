@@ -27,7 +27,7 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS cambio_moedas (
 while data_inicio <= data_fim:
     # Formatando a data no formato necessário (YYYY-MM-DD)
     data_formatada = data_inicio.strftime('%Y-%m-%d')
-    
+    #Extraindo os dados da API utilizando os parâmetros: url, api_key, data início, data fim, e moedas (sempre em comparação com USD)
     url = f"{base_url}{data_formatada}.json?app_id={api_key}&base=USD&symbols={','.join(moedas)}&show_alternative=false&prettyprint=false"
     
     headers = {"accept": "application/json"}
