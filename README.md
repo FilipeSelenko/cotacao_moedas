@@ -9,17 +9,17 @@ Python: Certifique-se de que você possui o Python instalado em seu sistema. Voc
 
 **Bibliotecas Python:**
 
-requests: Utilizado para fazer solicitações HTTP à API.
-json: Utilizado para processar os dados retornados em formato JSON.
-sqlite3: Utilizado para interagir com o banco de dados SQLite.
-Você pode instalar essas bibliotecas usando o gerenciador de pacotes pip, se ainda não estiverem instaladas:
+**requests:** Utilizado para fazer solicitações HTTP à API.
+**json:** Utilizado para processar os dados retornados em formato JSON.
+**sqlite3:** Utilizado para interagir com o banco de dados SQLite.
+Você pode instalar essas bibliotecas usando o gerenciador de pacotes **pip**, se ainda não estiverem instaladas:
 
-pip install requests json sqlite3
+```pip install requests json sqlite3```
 
 **Configuração**
 Antes de executar o script, é necessário configurar algumas variáveis:
 
-api_key: Substitua 'abc232d21be4415d83620c03a8b0b05a' pela sua chave de API do Open Exchange Rates. Você pode obter uma chave em openexchangerates.org.
+api_key: Substitua pela sua chave de API do Open Exchange Rates. Você pode obter uma chave em _openexchangerates.org._
 
 data_inicio e data_fim: Defina as datas de início e fim desejadas para a coleta de dados cambiais. No exemplo, o período está definido de 21 de julho de 2022 a 31 de agosto de 2022. Você pode ajustar essas datas conforme necessário.
 
@@ -30,9 +30,9 @@ conexao: Especifique o nome do banco de dados SQLite onde os dados serão armaze
 **Executando o Script**
 Após configurar as variáveis, você pode executar o script para coletar os dados cambiais. Para executar o script, basta abrir um terminal, navegar até o diretório onde o script está localizado e executar o seguinte comando:
 
-python nome_do_script.py
+```python nome_do_script.py```
 
-Substitua nome_do_script.py pelo nome do arquivo onde o código está armazenado.
+Substitua ```nome_do_script.py``` pelo nome do arquivo onde o código está armazenado.
 
 **Resultados**
 
@@ -59,7 +59,7 @@ sqlite3: Utilizado para criar e gerenciar uma conexão com o banco de dados SQLi
 pandas: Utilizado para ler e manipular os dados do arquivo CSV.
 Você pode instalar essas bibliotecas usando o gerenciador de pacotes pip, se ainda não estiverem instaladas:
 
-pip install sqlite3 pandas
+```pip install sqlite3 pandas```
 
 **Configuração**
 Antes de executar o script, é necessário configurar algumas variáveis:
@@ -75,9 +75,8 @@ dtype: Este dicionário especifica os tipos de dados (datatypes) que serão usad
 **Executando o Script**
 Após configurar as variáveis, você pode executar o script para carregar os dados do arquivo CSV no banco de dados. Para executar o script, basta abrir um terminal, navegar até o diretório onde o script está localizado e executar o seguinte comando:
 
-python nome_do_script.py
+```python nome_do_script.py```
 
-python nome_do_script.py
 Substitua nome_do_script.py pelo nome do arquivo onde o código está armazenado.
 
 **Resultados**
