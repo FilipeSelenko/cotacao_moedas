@@ -78,7 +78,7 @@ Após configurar as variáveis, você pode executar o script para carregar os da
 
 * **dtype:** Este dicionário especifica os tipos de dados (datatypes) que serão usados para as colunas no banco de dados. 
 
-## Dashboard criado com os resultados:
+## Dashboard criado com os resultados no [Looker](https://lookerstudio.google.com/reporting/5eae0f7a-395f-4e67-b118-4666b9d06d7a):
 
 <img width="902" alt="image" src="https://github.com/FilipeSelenko/cotacao_moedas/assets/66075126/6070c9e3-b86a-43f5-a4a6-31af105065de">
 
