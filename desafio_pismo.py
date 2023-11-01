@@ -6,18 +6,18 @@ from datetime import datetime, timedelta
 api_key = 'abc232d21be4415d83620c03a8b0b05a'
 base_url = "https://openexchangerates.org/api/historical/"
 
-# Data de início e fim desejadas
+# Data de início e fim que iremos extrair
 data_inicio = datetime(2022, 7, 21)
 data_fim = datetime(2022, 8, 31)
 
-# Símbolos que você deseja obter
+# Moedas que iremos extrair
 moedas = ["BRL", "EUR", "CLP"]
 
-# Conexão com o banco de dados SQLite
+# Criando conexão com o banco de dados SQLite
 conexao = sqlite3.connect("desafio_pismo.db")
 cursor = conexao.cursor()
 
-# Crie a tabela "cambio_moedas" se ela não existir
+# Criando a tabela "cambio_moedas"
 cursor.execute('''CREATE TABLE IF NOT EXISTS cambio_moedas (
                     data TEXT,
                     valor REAL,
@@ -25,7 +25,7 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS cambio_moedas (
                 )''')
 
 while data_inicio <= data_fim:
-    # Formate a data no formato necessário (YYYY-MM-DD)
+    # Formatando a data no formato necessário (YYYY-MM-DD)
     data_formatada = data_inicio.strftime('%Y-%m-%d')
     
     url = f"{base_url}{data_formatada}.json?app_id={api_key}&base=USD&symbols={','.join(moedas)}&show_alternative=false&prettyprint=false"
@@ -44,10 +44,10 @@ while data_inicio <= data_fim:
     else:
         print(f"Erro ao buscar dados para a data: {data_formatada}")
 
-    # Avance para o próximo dia
+    # Reiniciando o LOOP para pegarmos o dia posterior
     data_inicio += timedelta(days=1)
 
-# Salve as alterações no banco de dados e feche a conexão
+# Salvando as alterações no banco de dados e fechando a sua conexão
 conexao.commit()
 conexao.close()
 
