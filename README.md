@@ -49,8 +49,6 @@ Ao final da execução, você terá os dados dos períodos selecionados e moedas
 
 O script ```ingestao_base_coffe.py``` será responsável por ler o arquivo CSV, transformar os dados em um DataFrame do pandas e carregar esses dados na tabela do banco de dados SQLite especificada. 
 
-Ao final da execução, você terá os dados do arquivo CSV armazenados no banco de dados ```desafio_pismo.db``` na tabela ```coffee```.
-
 ### Este projeto utiliza as seguintes bibliotecas:
 
 * **sqlite3:** Utilizado para criar e gerenciar uma conexão com o banco de dados SQLite.
@@ -76,7 +74,9 @@ Após configurar as variáveis, você pode executar o script para carregar os da
 
 * **df.rename():** Se o arquivo CSV tiver colunas com nomes diferentes dos que são desejados na tabela do banco de dados, você pode usar o método df.rename() para renomear as colunas. 
 
-* **dtype:** Este dicionário especifica os tipos de dados (datatypes) que serão usados para as colunas no banco de dados. 
+* **dtype:** Este dicionário especifica os tipos de dados (datatypes) que serão usados para as colunas no banco de dados.
+
+Ao final da execução, você terá os dados do arquivo CSV armazenados no banco de dados ```desafio_pismo.db``` na tabela ```coffee```.
 
 ## Dashboard criado com os resultados no [Looker](https://lookerstudio.google.com/reporting/5eae0f7a-395f-4e67-b118-4666b9d06d7a):
 
