@@ -70,4 +70,5 @@ Dashboard criado com os resultados:
 
 Dados do dashboard: 
 Última cotação das moedas EUR, BRL e CLP
+
 Histórico dos últimos 30 dias das moedas
