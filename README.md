@@ -1,4 +1,4 @@
-## Sobre este serviço
+## About this service
 * This service collects exchange rate data, converted to USD (Dollar), for the currencies BRL (Real), EUR (Euro), and CLP (Chilean Peso) from the Open Exchange Rates API and stores it in a SQLite database.
 * The script uses the requests library to make requests to the API, processes the JSON-formatted data with the json library, and uses SQLite to create the database, table, and ingest the data.
 * For study and comparison purposes, a script is also provided in the repository for loading CSV data into a SQLite database. The file (coffee.csv) was used in this study.
