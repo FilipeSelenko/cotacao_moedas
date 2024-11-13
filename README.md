@@ -1,88 +1,88 @@
 ## Sobre este serviço
-* Este serviço coleta dados cambiais convertidos em **USD (Dólar)** das moedas **BRL (Real), EUR (Euro) e CLP (Pesos Chilenos)** a partir da **API do Open Exchange Rates** e armazena esses dados em um banco de dados SQLite.
-* O script utiliza a biblioteca requests para fazer solicitações à API, processa os dados retornados em formato JSON com a biblioteca json, e utiliza o SQLite para criação do banco de dados, tabela e ingestão dos dados.
-* Para fins de estudo e comparação, no repositório temos também o um script para carregamento de dados de arquivo CSV para um banco de dados SQLite. No estudo foi utilizado o arquivo (coffee.csv).
-* O script utiliza a biblioteca sqlite3 para criar uma conexão com o banco de dados e a biblioteca pandas para ler e transformar o arquivo CSV em um DataFrame antes de carregá-lo no banco de dados.
+* This service collects exchange rate data, converted to USD (Dollar), for the currencies BRL (Real), EUR (Euro), and CLP (Chilean Peso) from the Open Exchange Rates API and stores it in a SQLite database.
+* The script uses the requests library to make requests to the API, processes the JSON-formatted data with the json library, and uses SQLite to create the database, table, and ingest the data.
+* For study and comparison purposes, a script is also provided in the repository for loading CSV data into a SQLite database. The file (coffee.csv) was used in this study.
+* The script uses the sqlite3 library to establish a connection to the database and the pandas library to read and transform the CSV file into a DataFrame before loading it into the database.
 
-## Pré requisitos do serviço
+## Service Prerequisites
 
 ### Python
 
-Este serviço utiliza o Python 3.8. Para baixar e instalar: [link](https://www.python.org/downloads/).
+This service requires Python 3.8. Download and install it here: [link](https://www.python.org/downloads/).
 
 **API Key:** [link](https://openexchangerates.org)
 
-**Base em CSV para fins de comparação:** No caso atual, foi utilizado uma base fornecida contendo histórico da cotação do valor do café em dólar.
+**CSV-based Dataset for Comparison:** In this case, a provided dataset containing historical coffee price data in USD was used.
 
-## Extração da cotação das moedas, e criação do banco de dados e tabela
+## Currency Rate Extraction, Database, and Table Creation
 
-### Este projeto utiliza as seguintes bibliotecas:
+### This project uses the following libraries:
 
-* **requests:** Utilizado para fazer solicitações HTTP à API.
+* **requests:** Used for making HTTP requests to the API.
 
-* **json:** Utilizado para processar os dados retornados em formato JSON.
+* **json:** Used to process JSON-formatted data returned from the API.
 
-* **sqlite3:** Utilizado para interagir com o banco de dados SQLite.
+* **sqlite3:** Used for interacting with the SQLite database.
 
 ```pip install requests json sqlite3```
 
-## Executando o Script
+## Running the Script
 
-Após configurar as variáveis, você pode executar o script para coletar os dados cambiais. Para executar o script, basta abrir um terminal, navegar até o diretório onde o script está localizado e executar o seguinte comando:
+After configuring the variables, you can run the script to collect exchange rate data. To execute the script, open a terminal, navigate to the directory where the script is located, and run the following command:
 
 ```python extracao_cotacao.py```
 
-### Campos
+### Fields
 
-* **api_key:** Substitua pela sua chave de API do Open Exchange Rates. Você pode obter uma chave em (https://openexchangerates.org/).
+* **api_key:** Replace with your Open Exchange Rates API key, which you can obtain here (https://openexchangerates.org/).
 
-* **data_inicio** e **data_fim**: O período utilizado na extração foi de 21 de julho de 2022 a 31 de agosto de 2022. Você pode ajustar essas datas conforme necessário.
+* **data_inicio** e **data_fim**: The extraction period used was from July 21, 2022, to August 31, 2022. You can adjust these dates as needed.
 
-* **moedas:** As moedas extraídas foram BRL(Real), EUR(Euro) e CLP(Peso Chileno), e sempre em comparação ao dólar (USD). Você pode adicionar ou remover moedas conforme necessário.
+* **moedas:** The extracted currencies were BRL (Real), EUR (Euro), and CLP (Chilean Peso), always in comparison to USD. You can add or remove currencies as needed.
 
-* **conexao:** Foi criado um banco de dados ```desafio_pismo.db``` e uma tabela ```cambio_moedas``` para a ingestão dos dados extraídos da API.
+* **conexao:** A database named ```desafio_pismo.db``` and a table named ```cambio_moedas``` were created to store the data extracted from the API.
 
-Ao final da execução, você terá os dados dos períodos selecionados e moedas inseridos no banco de dados ```desafio_pismo.db``` na tabela ```cambio_moedas```.
+Upon completion, the data for the selected periods and currencies will be stored in the ```desafio_pismo.db``` database in the ```cambio_moedas```.
 
 
-## Ingestão do arquivo CSV
+## CSV File Ingestion
 
-O script ```ingestao_base_coffe.py``` será responsável por ler o arquivo CSV, transformar os dados em um DataFrame do pandas e carregar esses dados na tabela do banco de dados SQLite especificada. 
+The script ```ingestao_base_coffe.py``` reads the CSV file, transforms the data into a pandas DataFrame, and loads it into the specified SQLite database table. 
 
-### Este projeto utiliza as seguintes bibliotecas:
+### This project uses the following libraries:
 
-* **sqlite3:** Utilizado para criar e gerenciar uma conexão com o banco de dados SQLite.
+* **sqlite3:** Used to create and manage a connection to the SQLite database.
 
-* **pandas:** Utilizado para ler e manipular os dados do arquivo CSV.
+* **pandas:** Used to read and manipulate data from the CSV file.
 
-Você pode instalar essas bibliotecas usando o gerenciador de pacotes **pip**, se ainda não estiverem instaladas:
+You can install these libraries using the pip package manager if they are not already installed:
 
 ```pip install sqlite3 pandas```
 
-## Executando o Script
+## Running the Script
 
-Após configurar as variáveis, você pode executar o script para carregar os dados do arquivo CSV no banco de dados. Para executar o script, basta abrir um terminal, navegar até o diretório onde o script está localizado e executar o seguinte comando:
+After configuring the variables, you can run the script to load the CSV data into the database. To execute the script, open a terminal, navigate to the directory where the script is located, and run the following command:
 
 ```python ingestao_base_coffe.py```
 
 
-### Campos
+### Fields
 
-* **conexao:** O script se conecta a um banco de dados SQLite chamado "desafio_pismo.db".
+* **conexao:** The script connects to a SQLite database named "desafio_pismo.db."
 
-* **nome_arquivo_csv:** Defina o nome do arquivo CSV que deseja carregar para o banco de dados. No exemplo, o nome do arquivo é "coffee.csv". 
+* **nome_arquivo_csv:** Specify the name of the CSV file you want to load into the database. In the example, the file name is "coffee.csv."
 
-* **df.rename():** Se o arquivo CSV tiver colunas com nomes diferentes dos que são desejados na tabela do banco de dados, você pode usar o método df.rename() para renomear as colunas. 
+* **df.rename():** f the CSV file has column names different from those desired in the database table, you can use the df.rename() method to rename the columns.
 
-* **dtype:** Este dicionário especifica os tipos de dados (datatypes) que serão usados para as colunas no banco de dados.
+* **dtype:** This dictionary specifies the data types to be used for the columns in the database.
 
-Ao final da execução, você terá os dados do arquivo CSV armazenados no banco de dados ```desafio_pismo.db``` na tabela ```coffee```.
+Upon completion, the data from the CSV file will be stored in the desafio_pismo.db database in the coffee table.
 
-## Dashboard criado com os resultados no [Looker](https://lookerstudio.google.com/reporting/5eae0f7a-395f-4e67-b118-4666b9d06d7a):
+## Dashboard Created with the Results in [Looker](https://lookerstudio.google.com/reporting/5eae0f7a-395f-4e67-b118-4666b9d06d7a):
 
 <img width="902" alt="image" src="https://github.com/FilipeSelenko/cotacao_moedas/assets/66075126/6070c9e3-b86a-43f5-a4a6-31af105065de">
 
-### Dados do dashboard: 
-* Última cotação das moedas EUR, BRL e CLP
+### Dashboard Data:
+* Latest exchange rate for EUR, BRL, and CLP
 
-* Histórico dos últimos 30 dias das moedas
+* Last 30-day historical exchange rate data for these currencies
